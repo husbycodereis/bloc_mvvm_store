@@ -22,6 +22,6 @@ class HomeService extends IHomeService {
   Future<List<String>?> fetchAllCategories() async {
     final response =
         await networkManager.sendPrimitive('${_HomeServicePath.products.name}/${_HomeServicePath.categories.name}');
-    return response is List ? response.map((e) => 'e').toList() : null;
+    return response is List ? response.map((e) => e.toString()).toList() : null;
   }
 }
